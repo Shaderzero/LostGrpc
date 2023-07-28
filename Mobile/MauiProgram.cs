@@ -1,5 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
-using Mobile.Data;
+﻿using Common;
+using Common.Services;
+using Microsoft.Extensions.Logging;
 
 namespace Mobile
 {
@@ -22,7 +23,14 @@ namespace Mobile
 		builder.Logging.AddDebug();
 #endif
 
-            builder.Services.AddSingleton<WeatherForecastService>();
+#if ANDROID
+        CommonSettings.SetCurrentDevicePlatform(Common.DevicePlatform.Android);
+#else
+        CommonSettings.SetCurrentDevicePlatform(Common.DevicePlatform.Blazor);
+#endif
+
+
+            builder.Services.AddCommonServices();
 
             return builder.Build();
         }
