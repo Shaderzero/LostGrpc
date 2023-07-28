@@ -1,20 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.9" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.9" PrivateAssets="all" />
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.9" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.9" PrivateAssets="all" />
 
-    <PackageReference Include="Google.Protobuf" Version="3.23.4" />
-    <PackageReference Include="Grpc.Tools" Version="2.56.2" PrivateAssets="All" />
-    <PackageReference Include="Grpc.Net.Client" Version="2.55.0" />
-    <PackageReference Include="Grpc.Net.Client.Web" Version="2.55.0" />
-
-    <Protobuf Include="..\Proto\weather.proto" GrpcServices="Client" Link="Protos\weather.proto" Access="Internal" />
-    <Protobuf Include="..\Proto\count.proto" GrpcServices="Client" Link="Protos\count.proto" Access="Internal" />
-  </ItemGroup>
+		<ProjectReference Include="..\Common\Common.csproj" />
+	</ItemGroup>
 
 </Project>
