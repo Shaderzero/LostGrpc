@@ -13,7 +13,7 @@ public static class ServiceInitialization
             var backendUrl = CommonSettings.BackendUrl;
 
             // GrpcWebText поддерживает стриминг, но GrpcWeb выдает пакеты меньше, работает с обоими
-            var httpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWebText, new HttpClientHandler());
+            var httpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler());
             return GrpcChannel.ForAddress(backendUrl, new GrpcChannelOptions { HttpHandler = httpHandler });
         });
 
